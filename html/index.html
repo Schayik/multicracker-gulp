@@ -6,7 +6,10 @@
     <body>
         @@include('./components/navbar.html')
 
-        <h1>Hey HTML PSV Cool</h1>
+        @@include('./components/header.html', {
+            "home": true,
+            "text": "Fijn snijden terwijl de structuur en scherpte worden behouden"
+        })
 
         @@include('./components/footer.html')
     </body>

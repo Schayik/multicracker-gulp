@@ -1,5 +1,33 @@
-body
-    width: 100vw
+@import url('https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+@import('./preset')
+@import('./normalize')
 
-h1
-    color: red
+body
+    width: 100vw;
+    background-color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    font-family: 'Muli', sans-serif;
+
+.compress
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 80px;
+
+
+ul
+    list-style: none;
+    // padding: 0;
+    margin: 0;
+
+a
+    color: #000000;
+    text-decoration: none;
+
+@import('./navbar')
+@import('./header')
+@import('./footer')

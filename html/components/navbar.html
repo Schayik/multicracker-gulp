@@ -1,1 +1,10 @@
-<nav>NavBar</nav>
+<div class='navbar'>
+    <div class='compress content'>
+        <img src='./images/logo.png' alt='Multicracker Benelux Logo' />
+        <nav>
+            <ul>
+                @@loop('./link.html', '../data/links.json')
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -6,16 +6,18 @@ var browserSync = require('browser-sync')
 
 const server = browserSync.create();
 
-function serve() {
+function serve(done) {
   server.init({
     server: {
       baseDir: './public'
     }
   });
+  done();
 }
 
-function reload() {
+function reload(done) {
   server.reload();
+  done();
 }
 
 function html() {
@@ -28,7 +30,7 @@ function html() {
 }
 
 function watchHtml() {
-  return watch('./html/*.html', series(html, reload));
+  return watch('./html/**', series(html, reload));
 }
 
 function css() {
