@@ -1,0 +1,38 @@
+$flag-height = 220px;
+$border-height = .5 * $flag-height
+
+header
+    background-image: url('../images/cracker.png')
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    .wrapper
+        height: $flag-height;
+        display: flex;
+
+        .flag
+            background-color: $green;
+            display: flex;
+            align-items: center;
+            padding-left: 'calc(0.5 * (100vw - %s) + %s)' % ($media.max $margin.max);
+
+            h1
+                color: $white;
+                font-size: 50px;
+                font-weight: bold;
+
+        $
+        .triangle
+            width: 0; 
+            height: 0; 
+            border-top: $border-height solid $green;
+            border-left: $border-height solid $green;
+            border-bottom: $border-height solid transparent; 
+            border-right: $border-height solid transparent; 
+
+
+            

@@ -1,6 +1,6 @@
 [
-    { "link": "./toepassingsgebieden", "label": "Toepassingsgebieden" },
-    { "link": "./modellen", "label": "Modellen" },
-    { "link": "./snijproces", "label": "Het snijproces" },
-    { "link": "./contact", "label": "Contact" }
+    { "link": "./toepassingsgebieden.html", "label": "Toepassingsgebieden" },
+    { "link": "./modellen.html", "label": "Modellen" },
+    { "link": "./snijproces.html", "label": "Het snijproces" },
+    { "link": "./contact.html", "label": "Contact" }
 ]
