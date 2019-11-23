@@ -1,7 +1,7 @@
 {
   "name": "multicracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Multicracker Benelux",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.1.1",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-stylus": "^2.7.0",
+    "gulp-wait": "^0.0.2",
+    "gulp-watch": "^5.0.1",
+    "stylus": "^0.54.7"
   }
 }
