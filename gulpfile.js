@@ -1,8 +1,10 @@
 const { src, dest, series, parallel, watch } = require('gulp')
 const fileinclude = require('gulp-file-include')
 const htmlbeautify = require('gulp-html-beautify')
+const markdown = require('markdown');
 var stylus = require('gulp-stylus')
 var browserSync = require('browser-sync')
+
 
 const server = browserSync.create();
 
@@ -24,7 +26,10 @@ function html() {
   return src(['./html/*.html'])
     .pipe(fileinclude({
       prefix: '@@',
-      basepath: '@file'
+      basepath: '@file',
+      filters: {
+        markdown: markdown.parse
+      }
     }))
     .pipe(htmlbeautify({ "indent_size": 2, "preserve_newlines": false, "end_with_newline": true, "jslint_happy": true }))
     .pipe(dest('./public'));
@@ -36,6 +41,10 @@ function watchHtml() {
 
 function watchJson() {
   return watch('./data/**', series(html, reload));
+}
+
+function watchMarkdown() {
+  return watch('./markdown/**', series(html, reload));
 }
 
 function css() {
@@ -58,7 +67,7 @@ exports.css = css;
 exports.watchCss = watchCss;
 
 const compile = series(html, css);
-const watchAll = parallel(watchHtml, watchCss, watchJson)
+const watchAll = parallel(watchHtml, watchCss, watchJson, watchMarkdown)
 const dev = series(compile, serve, watchAll);
 
 exports.compile = compile;
