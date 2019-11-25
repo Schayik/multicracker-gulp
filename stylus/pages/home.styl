@@ -19,6 +19,8 @@
             a
                 color: $green;
                 text-decoration: underline;
+                &:hover
+                    color: $green-hover
             p:not(:first-child)
                 margin-top: 28px;
 
@@ -35,7 +37,10 @@
             align-items: center;
             padding-bottom: 50px;
 
-            &:hover { cursor: pointer }
+            &:hover
+                cursor: pointer
+                .overlay
+                    background-color: $green-hover
 
             img, p
                 position: relative;

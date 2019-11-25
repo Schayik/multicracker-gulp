@@ -26,7 +26,7 @@ footer
         a
             position: relative
             flex: 1 1 0px;
-            padding: 40px 40px 0 40px;
+            padding: 50px 40px 0 40px;
             height: 150px;
 
             display: flex;
@@ -44,6 +44,9 @@ footer
 
             .text
                 margin-left: 30px;
+                word-break: break-all;
+                .label
+                    font-weight: bold;
 
             .triangle
                 position: absolute;
@@ -61,24 +64,22 @@ footer
                 bottom: 0;
                 left: 0;
 
-            &.open
-                .background
-                    background-color: transparent;
-                    border: 5px solid $white;
-                    border-top: none;
-
+            &:hover
                 .triangle
-                    height: 30px;
-                    position: absolute;
-                    background: linear-gradient(3deg, transparent 0%, transparent 45%, #fff 48%, #fff 52%, transparent 55%, transparent 100%);
-                    border-left: 5px solid $white;
+                    background: 'linear-gradient(to bottom left, transparent 0%, transparent 49%, %s 51%, %s 100%)' % ($white-hover $white-hover);
+                .background
+                    background-color: $white-hover
 
+            &.open
                 svg.border
                     position: absolute;
                     top: 0;
                     right: 0;
                     bottom: 0;
                     left: 0;
+                .text p
+                    color: $white;
+                    font-size: 18px;
 
                     
 

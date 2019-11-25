@@ -1,5 +1,5 @@
 [
     { "src": "../icons/call.svg", "link": "tel:0031486421510", "text": "+31(0)486 421510", "label": "Telefoon" },
-    { "src": "../icons/chat.svg", "link": "https://api.whatsapp.com/send?phone=31683488976&text=Test", "text": "+31(0)486 421510", "label": "Telefoon" },
+    { "src": "../icons/chat.svg", "link": "https://api.whatsapp.com/send?phone=31683488976&text=Test", "text": "+31(0)486 421510", "label": "WhatsApp" },
     { "src": "../icons/mail.svg", "link": "mailto:info@multicrackerbenelux.com", "text": "info@multicrackerbenelux.com", "label": "E-mail" }
 ]
