@@ -8,7 +8,7 @@
         padding-top: 90px;
         padding-bottom: 70px;
 
-        .markdown, .button
+        .markdown, a.button
             flex: 1 1 0px
 
         .markdown
@@ -22,7 +22,7 @@
             p:not(:first-child)
                 margin-top: 28px;
 
-        .button
+        a.button
             position: relative;
             margin-left: 50px;
             height: 300px;
@@ -34,6 +34,8 @@
             justify-content: center;
             align-items: center;
             padding-bottom: 50px;
+
+            &:hover { cursor: pointer }
 
             img, p
                 position: relative;

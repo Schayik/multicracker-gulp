@@ -1,9 +1,14 @@
-<header>
-    <div class='spacer'></div>
+<header 
+    @@if (home === true) { class='home-header' }
+    @@if (home === false) { class='not-home' }
+>
+    @@if (home === true) { <div class='spacer'></div> }
+    @@if (home === false) { <div class='overlay'></div> }
     <div class='wrapper'>
         <div class='flag'>
             <h1>@@text</h1>
         </div>
         <div class='triangle'></div>
     </div>
+    @@if (home === false) { <div class='spacer'></div> }
 </header>

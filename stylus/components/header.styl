@@ -1,5 +1,7 @@
-$flag-height = 220px;
+$flag-height = 100px
 $border-height = .5 * $flag-height
+$flag-height-home = 220px
+$border-height-home = .5 * $flag-height-home
 
 header
     background-image: url('../images/cracker.png')
@@ -16,6 +18,7 @@ header
         padding-bottom: 90px;
     
     .wrapper
+        position: relative;
         height: $flag-height;
         display: flex;
 
@@ -36,7 +39,39 @@ header
             border-top: $border-height solid $green;
             border-left: $border-height solid $green;
             border-bottom: $border-height solid transparent; 
-            border-right: $border-height solid transparent; 
+            border-right: $border-height solid transparent;
 
+    &.not-home
+        position: relative;
+
+        .overlay
+            position: absolute;
+            background-color: $black-overlay;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+        .wrapper 
+            .flag
+                background-color: $green-opacity
+                padding-right: 50px;
+
+            .triangle
+                border-top: $border-height solid $green-opacity;
+                border-left: $border-height solid $green-opacity;
+                border-bottom: $border-height solid transparent; 
+                border-right: $border-height solid transparent; 
+
+    &.home-header
+        
+        .wrapper
+            height: $flag-height-home;
+
+            .triangle
+                border-top: $border-height-home solid $green;
+                border-left: $border-height-home solid $green;
+                border-bottom: $border-height-home solid transparent; 
+                border-right: $border-height-home solid transparent; 
 
             
