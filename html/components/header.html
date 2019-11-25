@@ -1,5 +1,4 @@
 <header 
-    @@if (home === true) { class='home-header' }
     @@if (home === false) { class='not-home' }
 >
     @@if (home === true) { <div class='spacer'></div> }
@@ -8,7 +7,11 @@
         <div class='flag'>
             <h1>@@text</h1>
         </div>
-        <div class='triangle'></div>
+        <svg viewBox='0 0 1 1'>
+            <polygon points='0,0 1,0 0,1' />
+        </svg>
+        
+        <!-- <div class='triangle'></div> -->
     </div>
     @@if (home === false) { <div class='spacer'></div> }
 </header>
