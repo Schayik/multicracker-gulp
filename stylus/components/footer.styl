@@ -60,6 +60,26 @@ footer
                 right: 0;
                 bottom: 0;
                 left: 0;
+
+            &.open
+                .background
+                    background-color: transparent;
+                    border: 5px solid $white;
+                    border-top: none;
+
+                .triangle
+                    height: 30px;
+                    position: absolute;
+                    background: linear-gradient(3deg, transparent 0%, transparent 45%, #fff 48%, #fff 52%, transparent 55%, transparent 100%);
+                    border-left: 5px solid $white;
+
+                svg.border
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
                     
 
             
