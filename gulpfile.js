@@ -1,9 +1,10 @@
 const { src, dest, series, parallel, watch } = require('gulp')
-const fileinclude = require('gulp-file-include')
+// const fileinclude = require('gulp-file-include')
 const htmlbeautify = require('gulp-html-beautify')
 const markdown = require('markdown');
 var stylus = require('gulp-stylus')
 var browserSync = require('browser-sync')
+var nunjucksRender = require('gulp-nunjucks-render');
 
 
 const server = browserSync.create();
@@ -23,20 +24,23 @@ function reload(done) {
 }
 
 function html() {
-  return src(['./html/*.html'])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file',
-      filters: {
-        markdown: markdown.parse
-      }
+  return src(['./nunjucks/*.njk'])
+    // .pipe(fileinclude({
+    //   prefix: '@@',
+    //   basepath: '@file',
+    //   filters: {
+    //     markdown: markdown.parse
+    //   }
+    // }))
+    .pipe(nunjucksRender({
+      path: ['nunjucks']
     }))
     .pipe(htmlbeautify({ "indent_size": 2, "preserve_newlines": false, "end_with_newline": true, "jslint_happy": true }))
     .pipe(dest('./public'));
 }
 
 function watchHtml() {
-  return watch('./html/**', series(html, reload));
+  return watch('./nunjucks/**', series(html, reload));
 }
 
 function watchJson() {

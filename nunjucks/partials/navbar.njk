@@ -1,0 +1,27 @@
+{% set page = page %}
+
+{% set links = [
+    { "link": "./toepassingsgebieden.html", "label": "Toepassingsgebieden" },
+    { "link": "./modellen.html", "label": "Modellen" },
+    { "link": "./snijproces.html", "label": "Het snijproces" },
+    { "link": "./contact.html", "label": "Contact" }
+] %}
+
+<div class='navbar'>
+    <div class='compress content'>
+        <a href='./'>
+            <img src='./images/logo.png' alt='Multicracker Benelux Logo' />
+        </a>
+        <nav>
+            <ul>
+                {% for link in links %}
+                    {% if page == link.label %}<li class='active'>{% else %}<li>{% endif %}
+                        <a href='{{ link.link }}'>
+                            {{ link.label }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</div>

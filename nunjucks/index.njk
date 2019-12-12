@@ -1,0 +1,12 @@
+{% extends 'templates/layout.njk' %}
+
+{% set title = 'Multicracker Benelux | Home' %}
+{% set page = 'Home' %}
+{% set headerText = 'Fijn snijden terwijl de structuur en \n scherpte worden behouden' %}
+
+{% block content %}
+  {% include 'partials/navbar.njk' %}
+  {% include 'partials/header.njk' %}
+  {% include 'pages/home.njk' %}
+  {% include 'partials/footer.njk' %}
+{% endblock %}
