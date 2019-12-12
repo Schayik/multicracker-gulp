@@ -1,6 +1,0 @@
-[
-    { "link": "./toepassingsgebieden.html", "label": "Toepassingsgebieden", "active": "@@active-link" },
-    { "link": "./modellen.html", "label": "Modellen" },
-    { "link": "./snijproces.html", "label": "Het snijproces" },
-    { "link": "./contact.html", "label": "Contact" }
-]
