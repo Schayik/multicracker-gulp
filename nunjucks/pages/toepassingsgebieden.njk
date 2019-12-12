@@ -1,0 +1,55 @@
+{% set gebieden = [
+    { 
+        "label": 
+        "Granen", 
+        "src": "../icons/cereal.svg", 
+        "list": [ "Maïs", "Tarwe", "Haver", "Gerst (ook voor debierbrouwende industrie!)" ] 
+    },
+    { 
+        "label": 
+        "Oliehoudende zaden", 
+        "src": "../icons/seed.svg", 
+        "list": [ "Lijnzaad", "Koolzaad" ] 
+    },
+    { 
+        "label": "Peulvruchten", 
+        "src": "../icons/legume.svg", 
+        "list": [ "Soja", "Bonen (waaronder veldbonen)", "Erwten" ] },
+    { 
+        "label": "Overige", 
+        "src": "../icons/etcetera.svg", 
+        "list": [ "Left-overs van vis", "Pellets", "Groenten en fruit", "Zonnepitschroot" ], 
+        "extra": "Ook het verkruimelen van uw brok levert een prachtig resultaat!" }
+] %}
+
+<section class='toepassingsgebieden'>
+    <div class='content compress'>
+        <div class='markdown'>
+            <p>MULTICRACKER® is een verwerkingsmachine die voor vele toepassingen ingezet kan worden. 
+            Hij kan ingezet worden als onderdeel van een productielijn of als stand-alone machine. 
+            Afhankelijk van de gewenste capaciteit en structuur kan de MULTICRACKER® in een enkele of dubbele opstelling geplaatst worden.</p>
+            <p>Op deze pagina krijgt u een overzicht van enkele van de vele mogelijke toepassingen voor de MULTICRACKER®. 
+            Mocht uw product er niet tussenstaan aarzel dan niet om <a href='./contact.html'>contact</a> met ons op te nemen!</p>
+        </div>
+        <div class='gebieden'>
+            <div>
+                {% for gebied in gebieden %}
+                    <div class='gebied'>
+                        <img src={{ gebied.src }} />
+                        <div class='text'>
+                            <h2>{{ gebied.label }}</h2>
+                            <ul>
+                                {% for item in gebied.list %}
+                                    <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% if gebied.extra %}
+                                <p>{{ gebied.extra }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

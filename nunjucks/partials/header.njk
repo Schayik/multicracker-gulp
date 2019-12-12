@@ -1,9 +1,9 @@
-{% set home = home|default(false) %}
+{% set page = page %}
 {% set text = headerText %}
 
-{% if home %}<header>{% else %}<header class='not-home'>{% endif %}
-    {% if not home %}<div class='spacer'></div>{% endif %}
-    {% if home %}<div class='overlay'></div>{% endif %}
+{% if page == 'Home' %}<header>{% else %}<header class='not-home'>{% endif %}
+    {% if page == 'Home' %}<div class='spacer'></div>{% endif %}
+    {% if page != 'Home' %}<div class='overlay'></div>{% endif %}
     <div class='wrapper'>
         <div class='flag'>
             <h1>{{ text | striptags(true) | escape | nl2br }}</h1>
@@ -14,5 +14,5 @@
         
         <!-- <div class='triangle'></div> -->
     </div>
-    {% if home %}<div class='spacer'></div>{% endif %}
+    {% if page != 'Home' %}<div class='spacer'></div>{% endif %}
 </header>
