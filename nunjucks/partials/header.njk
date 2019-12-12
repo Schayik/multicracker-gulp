@@ -8,11 +8,11 @@
         <div class='flag'>
             <h1>{{ text | striptags(true) | escape | nl2br }}</h1>
         </div>
-        <svg viewBox='0 0 1 1'>
-            <polygon points='0,0 1,0 0,1' />
-        </svg>
-        
-        <!-- <div class='triangle'></div> -->
+        <div>
+            <svg viewBox='0 0 1 1'>
+                <polygon points='0,0 1,0 0,1' />
+            </svg>
+        </div>
     </div>
     {% if page != 'Home' %}<div class='spacer'></div>{% endif %}
 </header>

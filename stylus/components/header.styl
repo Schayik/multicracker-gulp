@@ -1,5 +1,3 @@
-$flag-height = 80px
-$flag-height-home = 160px
 
 header
     background-image: url('../images/cracker.png')
@@ -17,14 +15,13 @@ header
     
     .wrapper
         display: flex;
-        height: $flag-height-home;
 
         .flag
             background-color: $green;
             display: flex;
             align-items: center;
+            padding: 20px 0;
             padding-left: 'calc(0.5 * (100vw - %s) + %s)' % ($media.max $margin.max);
-
             h1
                 color: $white;
                 font-size: 40px;
@@ -49,6 +46,6 @@ header
             height: $flag-height;
             .flag
                 background-color: $green-opacity
-                padding-right: 50px;
+                padding-right: 20px;
             svg
                 fill: $green-opacity
