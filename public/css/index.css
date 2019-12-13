@@ -266,6 +266,7 @@ a {
 }
 .navbar a.logo:hover {
   cursor: pointer;
+  opacity: 0.7;
 }
 .navbar a.logo img {
   height: 50px;
@@ -368,9 +369,10 @@ footer .content {
 footer .content a {
   position: relative;
   flex: 1 1 0px;
-  padding: 28px 20px 0 20px;
+  padding: 8px 20px 0 20px;
   height: 100px;
   display: flex;
+  align-items: center;
 }
 footer .content a:not(:first-child) {
   margin-left: 40px;
@@ -384,46 +386,23 @@ footer .content a img {
   width: 40px;
   height: 40px;
 }
-footer .content a .text {
+footer .content a p {
+  font-size: 14px;
   margin-left: 20px;
   word-break: break-all;
 }
-footer .content a .text p {
-  font-size: 14px;
-}
-footer .content a .text .label {
-  font-weight: bold;
-}
-footer .content a .triangle {
-  position: absolute;
-  background: linear-gradient(to bottom left, transparent 0%, transparent 49%, #fff 51%, #fff 100%);
-  width: 100%;
-  height: 25px;
-  top: 0;
-  left: 0;
-}
-footer .content a .background {
-  position: absolute;
-  background-color: #fff;
-  top: 25px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-footer .content a:hover .triangle {
-  background: linear-gradient(to bottom left, transparent 0%, transparent 49%, rgba(255,255,255,0.9) 51%, rgba(255,255,255,0.9) 100%);
-}
-footer .content a:hover .background {
-  background-color: rgba(255,255,255,0.9);
-}
-footer .content a.open svg.border {
+footer .content a svg {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
+  z-index: -1;
 }
-footer .content a.open .text p {
+footer .content a:hover svg {
+  opacity: 0.9;
+}
+footer .content a.open p {
   color: #fff;
 }
 .home {
@@ -462,19 +441,20 @@ footer .content a.open .text p {
   font-size: 20px;
   margin-top: 16px;
 }
+.home a.button svg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32px;
+  width: 100%;
+}
 .home a.button .overlay {
   position: absolute;
   background-color: rgba(18,157,81,0.9);
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-}
-.home a.button .triangle {
-  position: absolute;
-  background: linear-gradient(to bottom left, transparent 0%, transparent 49%, #fff 51%, #fff 100%);
-  width: 100%;
-  height: 30px;
   bottom: 0;
 }
 .toepassingsgebieden .gebieden {
@@ -528,7 +508,7 @@ footer .content a.open .text p {
 .modellen .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 40px;
+  grid-gap: 60px;
   width: 100%;
 }
 .modellen .wrapper .model {
@@ -541,7 +521,7 @@ footer .content a.open .text p {
   height: 100%;
   width: 100%;
   border: 2px rgba(18,157,81,0.9) solid;
-  padding: 40px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
 }
@@ -558,7 +538,7 @@ footer .content a.open .text p {
   color: rgba(18,157,81,0.9);
   font-weight: 700;
   font-size: 16px;
-  margin-top: 32px;
+  margin-top: 24px;
 }
 .modellen .wrapper .model.double {
   grid-column: 1/3;
@@ -574,12 +554,12 @@ footer .content a.open .text p {
 }
 .modellen .wrapper .model.double .inner .double-item:first-child {
   border-right: 2px rgba(18,157,81,0.9) solid;
-  padding-right: 40px;
+  padding-right: 24px;
 }
 .modellen .wrapper .model.double .inner .double-item.right {
   justify-content: space-evenly;
-  margin-left: 40px;
-  flex-basis: 40px;
+  margin-left: 60px;
+  flex-basis: 24px;
 }
 .modellen .wrapper .model.double .inner .double-item.right p {
   font-size: 13px;
