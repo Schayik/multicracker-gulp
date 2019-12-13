@@ -16,5 +16,6 @@
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-stylus": "^2.7.0",
     "stylus": "^0.54.7"
-  }
+  },
+  "dependencies": {}
 }
