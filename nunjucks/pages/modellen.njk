@@ -1,31 +1,31 @@
 {% set modellen = [
-    { "src": "../images/test-model.png", "name": "Multicracker MC 11" },
-    { "src": "../images/test-model.png", "name": "Multicracker MC 11" },
-    { "src": "../images/test-model.png", "name": "Multicracker MC 11" },
-    { "src": "../images/test-model.png", "name": "Multicracker MC 11" },
-    { "src": "../images/test-model.png", "name": "Multicracker MC 11" },
+    { "src": "../images/modellen/mc11.png", "name": "Multicracker MC 11" },
+    { "src": "../images/modellen/mc300.png", "name": "Multicracker MC 300" },
+    { "src": "../images/modellen/mc350.png", "name": "Multicracker MC 350" },
+    { "src": "../images/modellen/mc370.png", "name": "Multicracker MC 370" },
+    { "src": "../images/modellen/mc600.png", "name": "Multicracker MC 600" },
     { 
-        "src": "../images/test-model.png",
-        "name": "Multicracker MC 11",
+        "src": "../images/modellen/ac100.png",
+        "name": "Agricracker® AC 100",
         "double": { 
             "length": "1070", 
             "width": "475",
             "height": "400",
             "weight": "225",
-            "power": "5,5",
+            "power": "5,5 kW",
             "cap": "0 - 3"
         }
     },
     { 
-        "src": "../images/test-model.png",
-        "name": "Multicracker MC 11",
+        "src": "../images/modellen/ac200.png",
+        "name": "Agricracker® AC 200",
         "double": { 
-            "length": "1070", 
-            "width": "475",
-            "height": "400",
-            "weight": "225",
-            "power": "5,5",
-            "cap": "0 - 3"
+            "length": "1080", 
+            "width": "435",
+            "height": "520",
+            "weight": "365",
+            "power": "5,5 kW / 7,5 kW / 9 kW / 11 kW",
+            "cap": "0 - 8"
         }
     }
 ] %}
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class='property-wrapper'>
                                     <img src='../icons/power.svg' />
-                                    <p>{{ model.double.power }} kW</p>
+                                    <p>{{ model.double.power }}</p>
                                 </div>
                                 <p><span>De capiciteit is </span>{{ model.double.cap }} ton / uur<span>, afhankelijk van het product en gewenste deeltjesgrootte.</p>
                             </div>
