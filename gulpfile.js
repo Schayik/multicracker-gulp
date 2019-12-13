@@ -3,6 +3,7 @@ const htmlbeautify = require('gulp-html-beautify')
 const stylus = require('gulp-stylus')
 const browserSync = require('browser-sync')
 const nunjucksRender = require('gulp-nunjucks-render');
+const ghPages = require('gulp-gh-pages');
 
 const server = browserSync.create();
 
@@ -48,6 +49,11 @@ function watchCss() {
   return watch('./stylus/**', series(css, reload));
 }
 
+function deploy() {
+  return src('./public/**/*')
+    .pipe(ghPages())
+}
+
 exports.serve = serve;
 exports.reload = reload;
 
@@ -64,5 +70,6 @@ const dev = series(compile, serve, watchAll);
 exports.compile = compile;
 exports.watchAll = watchAll;
 exports.dev = dev;
+exports.deploy = deploy;
 
 exports.default = dev
