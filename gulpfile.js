@@ -3,14 +3,13 @@ const htmlbeautify = require('gulp-html-beautify')
 const stylus = require('gulp-stylus')
 const browserSync = require('browser-sync')
 const nunjucksRender = require('gulp-nunjucks-render');
-const ghPages = require('gulp-gh-pages');
 
 const server = browserSync.create();
 
 function serve(done) {
   server.init({
     server: {
-      baseDir: './public'
+      baseDir: './docs'
     }
   });
   done();
@@ -32,7 +31,7 @@ function html() {
       "end_with_newline": true, 
       "jslint_happy": true 
     }))
-    .pipe(dest('./public'));
+    .pipe(dest('./docs'));
 }
 
 function watchHtml() {
@@ -42,16 +41,11 @@ function watchHtml() {
 function css() {
   return src('./stylus/index.styl')
     .pipe(stylus())
-    .pipe(dest('./public/css'))
+    .pipe(dest('./docs/css'))
 }
 
 function watchCss() {
   return watch('./stylus/**', series(css, reload));
-}
-
-function deploy() {
-  return src('./public/**/*')
-    .pipe(ghPages())
 }
 
 exports.serve = serve;
@@ -70,6 +64,5 @@ const dev = series(compile, serve, watchAll);
 exports.compile = compile;
 exports.watchAll = watchAll;
 exports.dev = dev;
-exports.deploy = deploy;
 
 exports.default = dev
