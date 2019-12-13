@@ -1,0 +1,72 @@
+{% set modellen = [
+    { "src": "../images/test-model.png", "name": "Multicracker MC 11" },
+    { "src": "../images/test-model.png", "name": "Multicracker MC 11" },
+    { "src": "../images/test-model.png", "name": "Multicracker MC 11" },
+    { "src": "../images/test-model.png", "name": "Multicracker MC 11" },
+    { "src": "../images/test-model.png", "name": "Multicracker MC 11" },
+    { 
+        "src": "../images/test-model.png",
+        "name": "Multicracker MC 11",
+        "double": { 
+            "length": "1070", 
+            "width": "475",
+            "height": "400",
+            "weight": "225",
+            "power": "5,5",
+            "cap": "0 - 3"
+        }
+    },
+    { 
+        "src": "../images/test-model.png",
+        "name": "Multicracker MC 11",
+        "double": { 
+            "length": "1070", 
+            "width": "475",
+            "height": "400",
+            "weight": "225",
+            "power": "5,5",
+            "cap": "0 - 3"
+        }
+    }
+] %}
+
+<section class='modellen'>
+    <div class='content compress'>
+        <div class='wrapper'>
+            {% for model in modellen %}
+                {% if model.double %}
+                    <div class='model double'>
+                        <div class='inner'>
+                            <div class='double-item'>
+                                <div class='image' style='background-image: url({{ model.src }})'></div>
+                                <p class='name'>{{ model.name }}<p>
+                            </div>
+                            <div class='double-item right'>
+                                <div class='property-wrapper'>
+                                    <img src='../icons/dimensions.svg' />
+                                    <p>{{ model.double.length }} mm (lengte)<br>{{ model.double.width }} mm (breedte)<br>{{ model.double.height }} mm (hoogte)</p>
+                                </div>
+                                <div class='property-wrapper'>
+                                    <img src='../icons/weight.svg' />
+                                    <p>{{ model.double.weight }} kg</p>
+                                </div>
+                                <div class='property-wrapper'>
+                                    <img src='../icons/power.svg' />
+                                    <p>{{ model.double.power }} kW</p>
+                                </div>
+                                <p><span>De capiciteit is </span>{{ model.double.cap }} ton / uur<span>, afhankelijk van het product en gewenste deeltjesgrootte.</p>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class='model'>
+                        <div class='inner'>
+                            <div class='image' style='background-image: url({{ model.src }})'></div>
+                            <p class='name'>{{ model.name }}<p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

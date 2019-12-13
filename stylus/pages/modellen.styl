@@ -1,0 +1,78 @@
+.modellen    
+
+    .wrapper
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 40px;
+        width: 100%;
+
+        .model
+            width: 100%;
+            padding-bottom: 100%;
+            position: relative;
+
+            .inner
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                border: 2px $green solid;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+
+                .image
+                    flex: 1;
+                    height: 100%;
+                    width: 100%;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+
+                p.name
+                    flex-shrink: 0;
+                    color: $green;
+                    font-weight: 700;
+
+            &.double
+                grid-column: 1 / 3;
+                padding-bottom: calc(50% - 40px);
+
+                .inner
+                    flex-direction: row;
+                    
+                    .double-item
+                        flex: 1 1 0px;
+                        display: flex;
+                        flex-direction: column;
+                        
+                        &:first-child
+                            border-right: 2px $green solid;
+                            padding-right: 40px;
+
+                        &.right
+                            justify-content: space-around;
+                            justify-content: space-evenly;
+                            margin-left: 40px;
+                            flex-basis: 40px;
+
+                            p
+                                font-size: 12px;
+                                span
+                                        color: $green;
+
+                            .property-wrapper
+                                display: flex;
+                                align-items: center;
+                                img
+                                    height: 44px;
+                                    width: 44px;
+                                p
+                                    margin-left: 12px;
+                                
+                                
+
+
+
+            
+
+            

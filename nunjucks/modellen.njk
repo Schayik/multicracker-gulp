@@ -1,0 +1,12 @@
+{% extends 'templates/layout.njk' %}
+
+{% set title = 'Multicracker Benelux | Modellen' %}
+{% set page = 'Modellen' %}
+{% set headerText = 'Modellen' %}
+
+{% block content %}
+  {% include 'partials/navbar.njk' %}
+  {% include 'partials/header.njk' %}
+  {% include 'pages/modellen.njk' %}
+  {% include 'partials/footer.njk' %}
+{% endblock %}
