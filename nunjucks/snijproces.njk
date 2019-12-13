@@ -1,0 +1,12 @@
+{% extends 'templates/layout.njk' %}
+
+{% set title = 'Multicracker Benelux | Snijproces' %}
+{% set page = 'Het snijproces' %}
+{% set headerText = 'Snijproces' %}
+
+{% block content %}
+  {% include 'partials/navbar.njk' %}
+  {% include 'partials/header.njk' %}
+  {% include 'pages/snijproces.njk' %}
+  {% include 'partials/footer.njk' %}
+{% endblock %}

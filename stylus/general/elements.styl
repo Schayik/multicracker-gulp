@@ -10,19 +10,61 @@ body
 
     font-family: 'Muli', sans-serif;
 
+    section
+        flex: 1;
+        display: flex;
+
+        .content
+            flex: 1;
+            display: flex;
+            padding-top: 60px;
+            padding-bottom: 60px;
+
+            .column
+                flex: 1 1 0px;
+                &:not(:first-child)
+                    margin-left: 40px;
+
 .compress
     max-width: $media.max;
     margin: 0 auto;
     padding: 0 $margin.max;
 
+
+
+
 .markdown
+    max-width: 520px;
     a
         color: $green;
         text-decoration: underline;
         &:hover
             color: $green-hover
-    p:not(:first-child)
-        margin-top: 28px;
+
+    h2, li, p, a
+        font-size: 16px;
+
+    h2
+        font-weight: 700;
+        margin: 24px 0 12px 0;
+        &:first-child
+            margin-top: 0;
+
+    ul li
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+
+        &::before
+            content: '';
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background-color: $green;
+            margin-right: 8px;
+
+        p, ul
+            margin-top: 12px;
 
 ul
     list-style: none;

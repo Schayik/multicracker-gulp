@@ -1,0 +1,49 @@
+{% set images = [
+    { "src": "../images/multicracker-1.svg" },
+    { "src": "../images/wasmolen-1.svg" },
+    { "src": "../images/wasmolen-3.svg" }
+] %}
+
+
+<section class='snijproces'>
+    <div class='content compress'>
+        <div class='column'>
+            <div class='markdown'>
+                <p>De MULTICRACKER® is een compacte machine waarmee producten kunnen worden verkleind. 
+                Bij dit proces wordt het beginproduct gecrackt (gebroken) in plaats van gemalen.<br><br>
+                In de machine zitten speciale gepatenteerde crackschijven die het product onder hoge snelheid tot de gewenste grootte verkleind. 
+                Met de messen maakt de MULTICRACKER® een snijdende beweging die vergelijkbaar is met het effect van een schaar. 
+                Door dit innovatieve snijproces en de optimale snijgeometrie kan het product snel worden verkleind tot de vooraf ingestelde grootte.<br><br>
+                In de afbeeldingen hieronder zie je dan het snijvlak van een Multicracker 3x groter is dan het snijvlak van een even grote walsmolen.
+                Hierdoor is de stroomsnelheid 3x zo groot en komt de stroomsnelheid overeen met een walsmolen die 3x zo groot is.</p>
+            </div>
+            <div class='images'>
+                {% for image in images %}
+                    <img src={{ image.src }} />
+                {% endfor %}
+            </div>
+        </div>
+        <div class='column'>
+            <div class='markdown'>
+                <h2>Waarom cracken (breken) in plaats van malen?</h2>
+                <p>Door het product te cracken wordt een gelijkmatige structuurgrootte bereikt. 
+                In het geval van diervoeding, heeft dit een positief effect op de spijsvertering van het dier.<br>
+                Door de snelle doorvoer in de machine, treedt geen opwarming van het product op.
+                Hierdoor is er een minimaal vochtverlies en behoudt het eindproduct zijn voedingswaarde.</p>
+                <h2>Uw voordeel</h2>
+                <ul>
+                    <li>Multifunctioneel inzetbaar</li>
+                    <li>Efficiënte verwerking van waardevolle grondstoffen</li>
+                    <li>Homogene structuur van eindproduct</li>
+                    <li>Verwerkt zowel droge, vette als vochtige producten</li>
+                    <li>Geen opwarming van product</li>
+                    <li>Eenvoudige en nauwkeurige bediening</li>
+                    <li>Energiebesparend</li>
+                    <li>Compacte en lichte bouwwijze</li>
+                    <li>Onderhoudsvriendelijk</li>
+                    <li>Lange levensduur</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

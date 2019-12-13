@@ -1,59 +1,46 @@
 .home
-    flex: 1;
-    display: flex;
-    align-items: center;
-
-    .content
+    a.button
+        position: relative;
+        height: 200px;
+        background-image: url('../images/cracker.png');
+        background-size: cover;
+        background-position: center;
         display: flex;
-        padding-top: 60px;
-        padding-bottom: 60px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30px;
 
-        .markdown, a.button
-            flex: 1 1 0px
-
-        a.button
-            position: relative;
-            margin-left: 40px;
-            height: 200px;
-            background-image: url('../images/cracker.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 30px;
-
-            &:hover
-                cursor: pointer
-                .overlay
-                    background-color: $green-hover
-
-            img, p
-                position: relative;
-                z-index: 1;
-
-            img
-                height: 60px;
-                width: 60px;
-
-            p
-                position: relative;
-                color: $white;
-                font-size: 20px;
-                margin-top: 16px;
-                
+        &:hover
+            cursor: pointer
             .overlay
-                position: absolute;
-                background-color: $green;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
+                background-color: $green-hover
 
-            .triangle
-                position: absolute;
-                background: linear-gradient(to bottom left, transparent 0%, transparent 49%, #fff 51%, #fff 100%);
-                width: 100%;
-                height: 30px;
-                bottom: 0;
+        img, p
+            position: relative;
+            z-index: 1;
+
+        img
+            height: 60px;
+            width: 60px;
+
+        p
+            position: relative;
+            color: $white;
+            font-size: 20px;
+            margin-top: 16px;
+            
+        .overlay
+            position: absolute;
+            background-color: $green;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+        .triangle
+            position: absolute;
+            background: linear-gradient(to bottom left, transparent 0%, transparent 49%, #fff 51%, #fff 100%);
+            width: 100%;
+            height: 30px;
+            bottom: 0;

@@ -40,7 +40,7 @@ function watchHtml() {
 
 function css() {
   return src('./stylus/index.styl')
-    .pipe(stylus({ compress: true }))
+    .pipe(stylus())
     .pipe(dest('./public/css'))
 }
 
