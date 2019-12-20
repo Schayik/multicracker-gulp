@@ -3,6 +3,8 @@ footer
     background-image: url('../images/cracker.png');
     background-size: cover;
     background-position: center;
+    @media(max-width: $media.small)
+        display: flex;
 
     .overlay
         position: absolute;
@@ -16,36 +18,40 @@ footer
         position: relative
         z-index: 1;
 
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 3.75rem;
+        padding-bottom: 3.75rem;
         
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 2.5rem;
+        @media(max-width: $media.xl)
+            grid-template-columns: 1fr 1fr 1fr;
+        @media(max-width: $media.large)
+            grid-template-columns: 1fr 1fr;
+        @media(max-width: $media.small)
+            grid-template-columns: 1fr;
 
         a
             position: relative
-            flex: 1 1 0px;
-            padding: 8px 20px 0 20px;
-            height: 100px;
+            flex: 1 0 280px;
+            padding: 8px 1.25rem 0 1.25rem;
+            height: 6.25rem;
+            max-width: 20rem;
 
             display: flex;
             align-items: center;
-
-            &:not(:first-child) 
-                margin-left: 40px;
 
             img, .text
                 position: relative;
                 z-index: 1;
 
             img
-                width: 40px;
-                height: 40px;
+                width: 2.5rem;
+                height: 2.5rem;
 
             p
-                font-size: 14px;
-                margin-left: 20px;
+                font-size: 1rem;
+                margin-left: 1.25rem;
                 word-break: break-all;
 
             svg
@@ -60,6 +66,7 @@ footer
                 opacity: .9;
 
             &.open p
+                font-size: 0.8125rem;
                 color: $white;
 
                     

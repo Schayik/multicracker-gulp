@@ -1,3 +1,15 @@
+html
+    font-size: 100%
+    @media(max-width: $media.max)
+        font-size: 90%;
+    @media(max-width: $media.xl)
+        font-size: 80%;
+    @media(max-width: $media.large)
+        font-size: 70%;
+    @media(max-width: $media.small)
+        font-size: 60%;
+        
+
 body
     width: 100vw;
     overflow-x: hidden;
@@ -17,8 +29,8 @@ body
         .content
             flex: 1;
             display: flex;
-            padding-top: 60px;
-            padding-bottom: 60px;
+            padding-top: 3.75rem;
+            padding-bottom: 3.75rem;
 
             .column
                 flex: 1 1 0px;
@@ -28,9 +40,10 @@ body
 .compress
     max-width: $media.max;
     margin: 0 auto;
-    padding: 0 $margin.max;
+    padding: 0 5rem;
 
-
+    @media(max-width: $media.small)
+        padding: 0 2rem;
 
 
 .markdown
@@ -42,7 +55,7 @@ body
             color: $green-hover
 
     h2, li, p, a
-        font-size: 16px;
+        font-size: 1rem;
 
     h2
         font-weight: 700;
@@ -80,6 +93,6 @@ h1, h2, p
     margin: 0;
 
 p, a
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 1.4;
     letter-spacing: 0.4px;

@@ -3,8 +3,13 @@
     .wrapper
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 60px;
+        grid-gap: 3.75rem;
         width: 100%;
+
+        @media (max-width: $media.large)
+            grid-template-columns: 1fr 1fr;
+        @media (max-width: $media.small)
+            grid-template-columns: 1fr;
 
         .model
             width: 100%;
@@ -32,7 +37,7 @@
                     flex-shrink: 0;
                     color: $green;
                     font-weight: 700;
-                    font-size: 16px;
+                    font-size: 1rem;
                     margin-top: 24px;
 
             &.double
@@ -47,17 +52,17 @@
                         display: flex;
                         flex-direction: column;
                         
-                        &:first-child
+                        &:left
                             border-right: 2px $green solid;
                             padding-right: 24px;
 
                         &.right
                             justify-content: space-evenly;
-                            margin-left: 60px;
+                            margin-left: 3.75rem;
                             flex-basis: 24px;
 
                             p
-                                font-size: 13px;
+                                font-size: .8125rem;
                                 span
                                         color: $green;
 
@@ -65,10 +70,31 @@
                                 display: flex;
                                 align-items: center;
                                 img
-                                    height: 40px;
-                                    width: 40px;
+                                    height: 2.5rem;
+                                    width: 2.5rem;
                                 p
                                     margin-left: 12px;
+
+                @media (max-width: $media.small)
+                    grid-column: 1 / 2;
+                    padding-bottom: calc(200% + 40px);
+
+                    .inner
+                        flex-direction: column;
+
+                        .double-item
+                            &.left
+                                border-right: none;
+                                border-bottom: 2px $green solid;
+                                padding-right: 0;
+                                padding-bottom: 24px;
+
+                            &.right
+                                margin-top: 3.75rem;
+                                flex-basis: 24px;
+                                margin-left: 0;
+
+    
                                 
                                 
 

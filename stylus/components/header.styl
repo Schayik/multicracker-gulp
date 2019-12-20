@@ -1,6 +1,3 @@
-$flag-height = 80px
-$flag-height-home = 160px
-
 header
     background-image: url('../images/cracker.png')
     background-size: cover;
@@ -9,25 +6,25 @@ header
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
 
     .spacer
-        padding-bottom: 60px;
+        padding-bottom: 3.75rem;
     
     .wrapper
         display: flex;
-        height: $flag-height-home;
+        height: 10rem;
 
         .flag
             background-color: $green;
             display: flex;
             align-items: center;
-            padding-left: 'calc(0.5 * (100vw - %s) + %s)' % ($media.max $margin.max);
+            padding-left: 'calc(0.5 * (100vw - %s) + 5rem)' % $media.max;
 
             h1
                 color: $white;
-                font-size: 40px;
+                font-size: 2.5rem;
                 font-weight: bold;
         svg
             fill: $green;
@@ -46,9 +43,31 @@ header
 
         .wrapper 
             position: relative;
-            height: $flag-height;
+            height: 5rem;
+
             .flag
                 background-color: $green-opacity
                 padding-right: 50px;
             svg
                 fill: $green-opacity
+
+    @media(max-width: $media.max)
+        .wrapper .flag
+            padding-left: 5rem;
+
+    @media(max-width: $media.medium)
+        .wrapper
+            height: 8rem
+            .flag
+                
+                h1
+                    font-size: 2rem;
+
+    @media(max-width: $media.small)
+        .wrapper 
+            height: 6rem
+            .flag 
+                padding-left: 2rem;
+                h1
+                    font-size: 1.5rem;
+

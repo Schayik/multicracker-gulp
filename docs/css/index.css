@@ -162,6 +162,29 @@ template {
 [hidden] {
   display: none;
 }
+html {
+  font-size: 100%;
+}
+@media (max-width: 1439px) {
+  html {
+    font-size: 90%;
+  }
+}
+@media (max-width: 1199px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media (max-width: 991px) {
+  html {
+    font-size: 70%;
+  }
+}
+@media (max-width: 575px) {
+  html {
+    font-size: 60%;
+  }
+}
 body {
   width: 100vw;
   overflow-x: hidden;
@@ -179,8 +202,8 @@ body section {
 body section .content {
   flex: 1;
   display: flex;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
 }
 body section .content .column {
   flex: 1 1 0px;
@@ -191,7 +214,12 @@ body section .content .column:not(:first-child) {
 .compress {
   max-width: 1439px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 5rem;
+}
+@media (max-width: 575px) {
+  .compress {
+    padding: 0 2rem;
+  }
 }
 .markdown {
   max-width: 520px;
@@ -207,7 +235,7 @@ body section .content .column:not(:first-child) {
 .markdown li,
 .markdown p,
 .markdown a {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .markdown h2 {
   font-weight: 700;
@@ -250,7 +278,7 @@ p {
 }
 p,
 a {
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.4;
   letter-spacing: 0.4px;
 }
@@ -269,17 +297,22 @@ a {
   opacity: 0.7;
 }
 .navbar a.logo img {
-  height: 50px;
+  height: 3rem;
 }
 .navbar ul {
   display: flex;
   padding: 0;
 }
+@media (max-width: 991px) {
+  .navbar ul {
+    display: none;
+  }
+}
 .navbar ul li {
-  margin-left: 60px;
+  margin-left: 3.75rem;
 }
 .navbar ul li a {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 .navbar ul li a:hover {
@@ -296,25 +329,25 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
 }
 header .spacer {
-  padding-bottom: 60px;
+  padding-bottom: 3.75rem;
 }
 header .wrapper {
   display: flex;
-  height: 160px;
+  height: 10rem;
 }
 header .wrapper .flag {
   background-color: rgba(18,157,81,0.9);
   display: flex;
   align-items: center;
-  padding-left: calc(0.5 * (100vw - 1439px) + 80px);
+  padding-left: calc(0.5 * (100vw - 1439px) + 5rem);
 }
 header .wrapper .flag h1 {
   color: #fff;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 header .wrapper svg {
@@ -334,7 +367,7 @@ header.not-home .overlay {
 }
 header.not-home .wrapper {
   position: relative;
-  height: 80px;
+  height: 5rem;
 }
 header.not-home .wrapper .flag {
   background-color: rgba(18,157,81,0.5);
@@ -343,11 +376,40 @@ header.not-home .wrapper .flag {
 header.not-home .wrapper svg {
   fill: rgba(18,157,81,0.5);
 }
+@media (max-width: 1439px) {
+  header .wrapper .flag {
+    padding-left: 5rem;
+  }
+}
+@media (max-width: 767px) {
+  header .wrapper {
+    height: 8rem;
+  }
+  header .wrapper .flag h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 575px) {
+  header .wrapper {
+    height: 6rem;
+  }
+  header .wrapper .flag {
+    padding-left: 2rem;
+  }
+  header .wrapper .flag h1 {
+    font-size: 1.5rem;
+  }
+}
 footer {
   position: relative;
   background-image: url("../images/cracker.png");
   background-size: cover;
   background-position: center;
+}
+@media (max-width: 575px) {
+  footer {
+    display: flex;
+  }
 }
 footer .overlay {
   position: absolute;
@@ -360,22 +422,35 @@ footer .overlay {
 footer .content {
   position: relative;
   z-index: 1;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2.5rem;
+}
+@media (max-width: 1199px) {
+  footer .content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 991px) {
+  footer .content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 575px) {
+  footer .content {
+    grid-template-columns: 1fr;
+  }
 }
 footer .content a {
   position: relative;
-  flex: 1 1 0px;
-  padding: 8px 20px 0 20px;
-  height: 100px;
+  flex: 1 0 280px;
+  padding: 8px 1.25rem 0 1.25rem;
+  height: 6.25rem;
+  max-width: 20rem;
   display: flex;
   align-items: center;
-}
-footer .content a:not(:first-child) {
-  margin-left: 40px;
 }
 footer .content a img,
 footer .content a .text {
@@ -383,12 +458,12 @@ footer .content a .text {
   z-index: 1;
 }
 footer .content a img {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 footer .content a p {
-  font-size: 14px;
-  margin-left: 20px;
+  font-size: 1rem;
+  margin-left: 1.25rem;
   word-break: break-all;
 }
 footer .content a svg {
@@ -403,14 +478,21 @@ footer .content a:hover svg {
   opacity: 0.9;
 }
 footer .content a.open p {
+  font-size: 0.8125rem;
   color: #fff;
 }
 .home {
   align-items: center;
 }
-.home a.button {
+.home .wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4rem 2.5rem;
+}
+.home .wrapper a.button {
   position: relative;
-  height: 200px;
+  height: 12.5rem;
   background-image: url("../images/cracker.png");
   background-size: cover;
   background-position: center;
@@ -420,28 +502,28 @@ footer .content a.open p {
   align-items: center;
   padding-bottom: 30px;
 }
-.home a.button:hover {
+.home .wrapper a.button:hover {
   cursor: pointer;
 }
-.home a.button:hover .overlay {
+.home .wrapper a.button:hover .overlay {
   background-color: rgba(18,157,81,0.7);
 }
-.home a.button img,
-.home a.button p {
+.home .wrapper a.button img,
+.home .wrapper a.button p {
   position: relative;
   z-index: 1;
 }
-.home a.button img {
-  height: 60px;
-  width: 60px;
+.home .wrapper a.button img {
+  height: 3.75rem;
+  width: 3.75rem;
 }
-.home a.button p {
+.home .wrapper a.button p {
   position: relative;
   color: #fff;
-  font-size: 20px;
+  font-size: 1.25rem;
   margin-top: 16px;
 }
-.home a.button svg {
+.home .wrapper a.button svg {
   position: absolute;
   left: 0;
   right: 0;
@@ -449,13 +531,37 @@ footer .content a.open p {
   height: 32px;
   width: 100%;
 }
-.home a.button .overlay {
+.home .wrapper a.button .overlay {
   position: absolute;
   background-color: rgba(18,157,81,0.9);
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+}
+@media (max-width: 991px) {
+  .home .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .home .wrapper .markdown {
+    grid-column: 1/3;
+  }
+  .home .wrapper a.button {
+    max-width: 20rem;
+  }
+}
+@media (max-width: 575px) {
+  .home .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .home .wrapper .markdown {
+    grid-column: 1/2;
+  }
+  .home .wrapper a.button {
+    width: 20rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
 .toepassingsgebieden .gebieden {
   display: flex;
@@ -468,8 +574,8 @@ footer .content a.open p {
   margin-top: 40px;
 }
 .toepassingsgebieden .gebieden .gebied img {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 .toepassingsgebieden .gebieden .gebied .text {
   margin-left: 20px;
@@ -477,7 +583,7 @@ footer .content a.open p {
 .toepassingsgebieden .gebieden .gebied .text h2,
 .toepassingsgebieden .gebieden .gebied .text li,
 .toepassingsgebieden .gebieden .gebied .text p {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .toepassingsgebieden .gebieden .gebied .text ul li {
   margin-top: 4px;
@@ -496,20 +602,42 @@ footer .content a.open p {
 .toepassingsgebieden .gebieden .gebied .text ul {
   margin-top: 12px;
 }
+@media (max-width: 767px) {
+  .toepassingsgebieden .content {
+    flex-direction: column;
+  }
+  .toepassingsgebieden .content .column:not(:first-child) {
+    margin-left: 0;
+    margin-top: 3.75rem;
+  }
+  .toepassingsgebieden .content .column .gebieden {
+    justify-content: flex-start;
+  }
+}
 .snijproces .images {
   max-width: 520px;
   margin-top: 20px;
 }
 .snijproces .images img {
   margin-top: 20px;
-  height: 200px;
+  max-height: 200px;
   max-width: 100%;
 }
 .modellen .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 60px;
+  grid-gap: 3.75rem;
   width: 100%;
+}
+@media (max-width: 991px) {
+  .modellen .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 575px) {
+  .modellen .wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 .modellen .wrapper .model {
   width: 100%;
@@ -537,7 +665,7 @@ footer .content a.open p {
   flex-shrink: 0;
   color: rgba(18,157,81,0.9);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   margin-top: 24px;
 }
 .modellen .wrapper .model.double {
@@ -552,17 +680,17 @@ footer .content a.open p {
   display: flex;
   flex-direction: column;
 }
-.modellen .wrapper .model.double .inner .double-item:first-child {
+.modellen .wrapper .model.double .inner .double-item:left {
   border-right: 2px rgba(18,157,81,0.9) solid;
   padding-right: 24px;
 }
 .modellen .wrapper .model.double .inner .double-item.right {
   justify-content: space-evenly;
-  margin-left: 60px;
+  margin-left: 3.75rem;
   flex-basis: 24px;
 }
 .modellen .wrapper .model.double .inner .double-item.right p {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .modellen .wrapper .model.double .inner .double-item.right p span {
   color: rgba(18,157,81,0.9);
@@ -572,21 +700,41 @@ footer .content a.open p {
   align-items: center;
 }
 .modellen .wrapper .model.double .inner .double-item.right .property-wrapper img {
-  height: 40px;
-  width: 40px;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 .modellen .wrapper .model.double .inner .double-item.right .property-wrapper p {
   margin-left: 12px;
+}
+@media (max-width: 575px) {
+  .modellen .wrapper .model.double {
+    grid-column: 1/2;
+    padding-bottom: calc(200% + 40px);
+  }
+  .modellen .wrapper .model.double .inner {
+    flex-direction: column;
+  }
+  .modellen .wrapper .model.double .inner .double-item.left {
+    border-right: none;
+    border-bottom: 2px rgba(18,157,81,0.9) solid;
+    padding-right: 0;
+    padding-bottom: 24px;
+  }
+  .modellen .wrapper .model.double .inner .double-item.right {
+    margin-top: 3.75rem;
+    flex-basis: 24px;
+    margin-left: 0;
+  }
 }
 .contact .wrapper {
   display: flex;
 }
 .contact .wrapper:not(:first-child) {
-  margin-top: 60px;
+  margin-top: 3.75rem;
 }
 .contact .wrapper img {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 .contact .wrapper p {
   margin-left: 12px;
@@ -599,4 +747,13 @@ footer .content a.open p {
 }
 .contact .wrapper:hover {
   opacity: 0.7;
+}
+@media (max-width: 767px) {
+  .contact .content {
+    flex-direction: column;
+  }
+  .contact .content .column:not(:first-child) {
+    margin-left: 0;
+    margin-top: 3.75rem;
+  }
 }

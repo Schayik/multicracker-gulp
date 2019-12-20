@@ -1,13 +1,12 @@
 .contact
-
     .wrapper
         display: flex;
         &:not(:first-child)
-            margin-top: 60px;
+            margin-top: 3.75rem;
 
         img
-            width: 40px;
-            height: 40px;
+            width: 2.5rem;
+            height: 2.5rem;
         p
             margin-left: 12px;
 
@@ -19,3 +18,11 @@
 
         &:hover
             opacity: .7;
+
+    @media(max-width: $media.medium) 
+        .content
+            flex-direction: column;
+            .column
+                &:not(:first-child)
+                    margin-left: 0;
+                    margin-top: 3.75rem;

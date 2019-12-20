@@ -10,14 +10,14 @@
                 margin-top: 40px;
 
             img
-                width: 40px
-                height: 40px;
+                width: 2.5rem;
+                height: 2.5rem;
             
             .text
                 margin-left: 20px;
 
                 h2, li, p
-                    font-size: 16px;
+                    font-size: 1rem;
 
                 ul li
                     margin-top: 4px;
@@ -34,3 +34,15 @@
 
                 p, ul
                     margin-top: 12px;
+
+
+    @media(max-width: $media.medium) 
+        .content
+            flex-direction: column;
+            .column
+                &:not(:first-child)
+                    margin-left: 0;
+                    margin-top: 3.75rem;
+
+                .gebieden
+                    justify-content: flex-start;
