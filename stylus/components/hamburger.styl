@@ -1,0 +1,64 @@
+nav.hamburger
+
+    button
+        position: relative
+        display: block;
+        border: 0;
+        background: none;
+        padding: 0;
+        height: 24px;
+        width: 24px;
+
+        &:focus
+            outline: none;
+
+        svg
+            position: absolute;
+            z-index: 2
+            display: block;
+            stroke: $green;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+
+        &[aria-expanded="true"] svg
+            stroke: $white;
+        
+
+    ul
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        height: 100vh;
+
+        pointer-events: none;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        background-color: $green-hover;
+
+        padding: 2rem;
+        padding-top: calc(3rem + 40px)
+        padding-right: 5rem;
+        padding-left: 5rem;
+
+        @media(max-width: $media.small)
+            padding-right: 2rem;
+            padding-left: 2rem;
+
+        transition: 0.5s ease-out transform;
+
+        &[hidden]
+            transform: translateX(100%);
+
+        a
+            font-weight: bold;
+            color: $white;
+            display: block;
+            font-size: 1.25rem;
+            margin-top: 20px;
+            pointer-events: all;

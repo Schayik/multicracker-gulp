@@ -299,27 +299,94 @@ a {
 .navbar a.logo img {
   height: 3rem;
 }
-.navbar ul {
-  display: flex;
-  padding: 0;
-}
 @media (max-width: 991px) {
-  .navbar ul {
+  .navbar nav.desktop {
     display: none;
   }
 }
-.navbar ul li {
+.navbar nav.desktop ul {
+  display: flex;
+  padding: 0;
+}
+.navbar nav.desktop ul li {
   margin-left: 3.75rem;
 }
-.navbar ul li a {
+.navbar nav.desktop ul li a {
   font-size: 1.25rem;
   font-weight: bold;
 }
-.navbar ul li a:hover {
+.navbar nav.desktop ul li a:hover {
   opacity: 0.7;
 }
-.navbar ul li.active a {
+.navbar nav.desktop ul li.active a {
   color: rgba(18,157,81,0.9);
+}
+.navbar nav.hamburger {
+  display: none;
+}
+@media (max-width: 991px) {
+  .navbar nav.hamburger {
+    display: block;
+  }
+}
+nav.hamburger button {
+  position: relative;
+  display: block;
+  border: 0;
+  background: none;
+  padding: 0;
+  height: 24px;
+  width: 24px;
+}
+nav.hamburger button:focus {
+  outline: none;
+}
+nav.hamburger button svg {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  stroke: rgba(18,157,81,0.9);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+nav.hamburger button[aria-expanded="true"] svg {
+  stroke: #fff;
+}
+nav.hamburger ul {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: rgba(18,157,81,0.7);
+  padding: 2rem;
+  padding-top: calc(3rem + 40px);
+  padding-right: 5rem;
+  padding-left: 5rem;
+  transition: 0.5s ease-out transform;
+}
+@media (max-width: 575px) {
+  nav.hamburger ul {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+nav.hamburger ul[hidden] {
+  transform: translateX(100%);
+}
+nav.hamburger ul a {
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  font-size: 1.25rem;
+  margin-top: 20px;
+  pointer-events: all;
 }
 header {
   background-image: url("../images/cracker.png");

@@ -14,18 +14,26 @@
         img
             height: 3rem;
 
-    ul
-        display: flex;
-        padding: 0;
+    nav.desktop
         @media (max-width: $media.large)
             display: none;
-        li
-            margin-left: 3.75rem;
-            a
-                font-size: 1.25rem;
-                font-weight: bold;
-                &:hover
-                    opacity: .7;
+        
+        ul
+            display: flex;
+            padding: 0;
+            li
+                margin-left: 3.75rem;
+                a
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                    &:hover
+                        opacity: .7;
 
-            &.active a 
-                color: $green;
+                &.active a 
+                    color: $green;
+
+    nav.hamburger
+        display: none;
+        @media (max-width: $media.large)
+            display: block;
+        

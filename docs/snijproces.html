@@ -16,8 +16,29 @@
       <a class='logo' href='./'>
         <img src='./images/logo.png' alt='Multicracker Benelux Logo' />
       </a>
-      <nav>
+      <nav class='desktop'>
         <ul>
+          <li>
+            <a href='./toepassingsgebieden.html'> Toepassingsgebieden </a>
+          </li>
+          <li>
+            <a href='./modellen.html'> Modellen </a>
+          </li>
+          <li class='active'>
+            <a href='./snijproces.html'> Het snijproces </a>
+          </li>
+          <li>
+            <a href='./contact.html'> Contact </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class='hamburger'>
+        <button aria-expanded="false" aria-controls="menu">
+          <svg id="i-menu" aria-label="Menu" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2">
+            <path d="M0 2 L16 2 M0 8 L16 8 M0 14 L16 14"></path>
+          </svg>
+        </button>
+        <ul id="menu" hidden>
           <li>
             <a href='./toepassingsgebieden.html'> Toepassingsgebieden </a>
           </li>
@@ -112,6 +133,7 @@
       </a>
     </div>
   </footer>
+  <script src="./scripts/hamburger.js"></script>
 </body>
 
 </html>
