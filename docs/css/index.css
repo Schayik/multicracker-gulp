@@ -460,6 +460,7 @@ footer .content a .text {
 footer .content a img {
   width: 2.5rem;
   height: 2.5rem;
+  flex-shrink: 0;
 }
 footer .content a p {
   font-size: 1rem;
@@ -480,6 +481,10 @@ footer .content a:hover svg {
 footer .content a.open p {
   font-size: 0.8125rem;
   color: #fff;
+}
+footer .content a.open:hover svg {
+  fill: #fff;
+  fill-opacity: 0.1;
 }
 .home {
   align-items: center;
@@ -623,6 +628,18 @@ footer .content a.open p {
   max-height: 200px;
   max-width: 100%;
 }
+@media (max-width: 767px) {
+  .snijproces .content {
+    flex-direction: column;
+  }
+  .snijproces .content .column:not(:first-child) {
+    margin-left: 0;
+    margin-top: 3.75rem;
+  }
+  .snijproces .content .column .images {
+    max-width: 300px;
+  }
+}
 .modellen .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -636,6 +653,8 @@ footer .content a.open p {
 }
 @media (max-width: 575px) {
   .modellen .wrapper {
+    max-width: 300px;
+    margin: 0 auto;
     grid-template-columns: 1fr;
   }
 }
@@ -709,7 +728,7 @@ footer .content a.open p {
 @media (max-width: 575px) {
   .modellen .wrapper .model.double {
     grid-column: 1/2;
-    padding-bottom: calc(200% + 40px);
+    padding-bottom: calc(150%);
   }
   .modellen .wrapper .model.double .inner {
     flex-direction: column;
@@ -721,7 +740,7 @@ footer .content a.open p {
     padding-bottom: 24px;
   }
   .modellen .wrapper .model.double .inner .double-item.right {
-    margin-top: 3.75rem;
+    margin-top: 2.5rem;
     flex-basis: 24px;
     margin-left: 0;
   }
@@ -748,9 +767,10 @@ footer .content a.open p {
 .contact .wrapper:hover {
   opacity: 0.7;
 }
-@media (max-width: 767px) {
+@media (max-width: 575px) {
   .contact .content {
     flex-direction: column;
+    margin: 0 auto;
   }
   .contact .content .column:not(:first-child) {
     margin-left: 0;

@@ -48,6 +48,7 @@ footer
             img
                 width: 2.5rem;
                 height: 2.5rem;
+                flex-shrink: 0;
 
             p
                 font-size: 1rem;
@@ -65,9 +66,13 @@ footer
             &:hover svg
                 opacity: .9;
 
-            &.open p
-                font-size: 0.8125rem;
-                color: $white;
+            &.open 
+                p
+                    font-size: 0.8125rem;
+                    color: $white;
+                &:hover svg
+                    fill: white;
+                    fill-opacity: .1;
 
                     
 

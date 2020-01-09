@@ -9,6 +9,16 @@
             max-height: 200px;
             max-width: 100%;
 
+    @media(max-width: $media.medium) 
+        .content
+            flex-direction: column;
+            .column
+                &:not(:first-child)
+                    margin-left: 0;
+                    margin-top: 3.75rem;
+
+                .images
+                    max-width: 300px;
 
         
 
